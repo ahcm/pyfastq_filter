@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyfastq_filter",
-    version="0.1.3",
+    version="0.2.0",
     author='Andy Hauser',
     author_email='Andreas.Hauser@LMU.de',
     license='LICENSE',
