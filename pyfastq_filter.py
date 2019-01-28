@@ -28,7 +28,7 @@ def main():
 
   for head, seq, qual in pyfastq_reader.fastq_reader_fh(handle):
     if len(seq) >= n:
-      print(head, seq, "+", qual)
+      print(head, seq, "+", qual, sep="\n")
 
 if __name__ == '__main__':
   main()
