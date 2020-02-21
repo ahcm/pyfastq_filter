@@ -18,17 +18,15 @@ import sys
 
 def main():
   arguments = docopt(__doc__)
-  #print(arguments)
 
   n = int(arguments["--length"])
 
-  #handle = gzip.open(fasta_file, "rt")
   handle = sys.stdin if arguments["FASTQ"] == "-" else open(arguments["FASTQ"])
   output = sys.stdout if arguments["--outfile"] == "-" else open(arguments["--outfile"])
 
   for head, seq, qual in pyfastq_reader.fastq_reader_fh(handle):
     if len(seq) >= n:
-      print(head, seq, "+", qual, sep="\n")
+      print(head, seq, "+", qual, sep="\n", file=output)
 
 if __name__ == '__main__':
   main()
