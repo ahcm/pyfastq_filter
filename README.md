@@ -12,10 +12,11 @@ pip3 install --user pyfastq_filter
 
 ```
 Usage:
-  pyfastq_filter.py [-q i] [-l n] [-o OUTNAME] FASTQ
+  pyfastq_filter.py [-q i] [-l n] [-m m] [-o OUTNAME] FASTQ
 
 Options:
   -l --length=n      minimum length to let through [default: 300]
+  -m --max-length=m  maximum length to let through [default: infinity]
   -q --quality=i     minimum quality to let through [default: 10]
   -o --outfile=FILE  output filename, otherwise STDOUT [default: -]
 ```
