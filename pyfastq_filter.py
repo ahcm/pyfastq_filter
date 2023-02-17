@@ -26,7 +26,7 @@ def main():
   quality     = int(arguments["--quality"])
 
   handle = sys.stdin  if arguments["FASTQ"] == "-" else open(arguments["FASTQ"])
-  output = sys.stdout if arguments["--outfile"] == "-" else open(arguments["--outfile"])
+  output = sys.stdout if arguments["--outfile"] == "-" else open(arguments["--outfile"], "w")
 
   for head, seq, qual in pyfastq_reader.fastq_reader_fh(handle):
     mean_qual = round(np.mean(bytearray(qual, "ascii")) - 33, 2)
